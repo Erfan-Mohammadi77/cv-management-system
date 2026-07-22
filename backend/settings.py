@@ -119,10 +119,13 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES": (
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ),
 }
-
 SPECTACULAR_SETTINGS = {
     "TITLE": "CV Management System API",
     "DESCRIPTION": "API documentation for CV Management System",
